@@ -13,3 +13,9 @@ const defaultState = {
   posts,
   comments
 }
+
+const store = createStore(rootReducer, defaultStore);
+
+export const history = syncHistoryWithStore(browserHistory, store);
+
+export default store;
