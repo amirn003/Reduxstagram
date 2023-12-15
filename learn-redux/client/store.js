@@ -9,7 +9,7 @@ import posts from './data/posts';
 
 // create an object for the default data
 
-const defaultState = {
+const defaultStore = {
   posts,
   comments
 }
