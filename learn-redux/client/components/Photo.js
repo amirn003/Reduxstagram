@@ -4,7 +4,15 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 const Photo = React.createClass({
   render() {
-    const {post, i, comments} = this.props;
+    const { post, i, comments } = this.props;
+
+    console.log("POST: ", post);
+
+    // Check if post is undefined or null
+    if (!post) {
+      console.error('Post is undefined or null:', post);
+      return null;
+    }
     return (
       <figure className='grid-figure'>
         <div className='grid-photo-wrap'>
@@ -25,7 +33,7 @@ const Photo = React.createClass({
               <Link className="button" to={`/view/${post.code}`}>
                 <span className="comment-count">
                   <span className="speech-bubble"></span>
-                  {/* {comments[post.code] ? comments[post.code].length : 0 } */}
+                  {comments[post.code] ? comments[post.code].length : 0 }
                 </span>
               </Link>
             </div>
