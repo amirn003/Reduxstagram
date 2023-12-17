@@ -6,7 +6,8 @@ function postComments(state = [], action) {
         user: action.author,
         text: action.comment
       }];
-    case 'REMOVE_COMMENT':
+    case 'DELETE_COMMENT':
+      console.log("Removing comment!");
       return state;
     default:
       return state;
@@ -15,7 +16,7 @@ function postComments(state = [], action) {
 }
 
 function comments(state = [], action) {
-  console.log(state, action);
+  // console.log(state, action);
   if(typeof action.postId !== 'undefined'){
     return {
       // take the current state
