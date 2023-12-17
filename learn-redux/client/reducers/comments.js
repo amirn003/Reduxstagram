@@ -8,7 +8,13 @@ function postComments(state = [], action) {
       }];
     case 'DELETE_COMMENT':
       console.log("Removing comment!");
-      return state;
+      // return the new state without the deleted
+      return [
+        // from start to one delete
+        ...state.slice(0, action.i),
+        // after the deleted one to the end
+        ...state.slice(action.i + 1)
+      ];
     default:
       return state;
   }
